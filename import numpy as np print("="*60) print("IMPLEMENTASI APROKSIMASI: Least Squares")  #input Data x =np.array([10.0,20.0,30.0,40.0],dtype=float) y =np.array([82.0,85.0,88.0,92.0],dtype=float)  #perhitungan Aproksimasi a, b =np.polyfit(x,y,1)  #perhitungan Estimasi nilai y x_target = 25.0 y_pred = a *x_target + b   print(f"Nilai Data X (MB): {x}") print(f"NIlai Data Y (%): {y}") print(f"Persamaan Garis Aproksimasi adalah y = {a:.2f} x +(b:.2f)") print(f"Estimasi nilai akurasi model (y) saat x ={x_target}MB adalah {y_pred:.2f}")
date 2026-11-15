@@ -1,0 +1,20 @@
+import numpy as np
+print("="*60)
+print("IMPLEMENTASI APROKSIMASI: Least Squares")
+
+#input Data
+x =np.array([10.0,20.0,30.0,40.0],dtype=float)
+y =np.array([82.0,85.0,88.0,92.0],dtype=float)
+
+#perhitungan Aproksimasi
+a, b =np.polyfit(x,y,1)
+
+#perhitungan Estimasi nilai y
+x_target = 25.0
+y_pred = a *x_target + b
+
+
+print(f"Nilai Data X (MB): {x}")
+print(f"NIlai Data Y (%): {y}")
+print(f"Persamaan Garis Aproksimasi adalah y = {a:.2f} x +(b:.2f)")
+print(f"Estimasi nilai akurasi model (y) saat x ={x_target}MB adalah {y_pred:.2f}")
